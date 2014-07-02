@@ -1,0 +1,8 @@
+.header{ position: fixed; top:0; width:100%;}
+.footer{ position: fixed; bottom:0; width: 100%;}
+#footer-menu{ width: 100%;}
+.section{background-size: cover;}
+#page1{background-image: url("../images/page1_bg.jpg");}
+#page2{background-image: url("../images/page2_bg.jpg");}
+#page3{background-image: url("../images/page3_bg.jpg");}
+#page4{background-image: url("../images/page4_bg.jpg");}

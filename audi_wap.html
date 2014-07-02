@@ -3,11 +3,32 @@
     <head>
         <meta charset="gbk">
         <title>奥迪品荐</title>
+        <link href="style/jquery.fullPage.css" rel="stylesheet" type="text/css" />
+        <link href="style/audi.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.fullPage.js"></script>
+        <script>
+            function testAnim(x) {
+                $('#dd').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                    $(this).removeClass();
+                });
+            }
+            $(document).ready(function() {
+                $('#fullpage').fullpage({
+                    'navigation': true,
+                    'navigationPosition': 'bottom'
+                });
+
+            });
+        </script>
     </head>
     <body>
         <div class="main-page">
 
+            <div class="header">
 
+            </div>
 
             <div id="fullpage">
                 <div class="section" id="page1">
@@ -22,6 +43,11 @@
                 <div class="section" id="page4">
 
                 </div>
+            </div>
+
+            <div class="footer">
+                <img id="footer-menu" src="images/bottom_menu.png" />
+                <a id="enroll-menu" href="javascript:;"></a>
             </div>
         </div>
         <div class="brand-page">
