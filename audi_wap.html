@@ -5,21 +5,53 @@
         <title>奥迪品荐</title>
         <link href="style/jquery.fullPage.css" rel="stylesheet" type="text/css" />
         <link href="style/audi.css" rel="stylesheet" type="text/css" />
+        <link href="style/flexslider.css" rel="stylesheet" type="text/css" />
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/jquery.fullPage.js"></script>
+        <script src="js/jquery.flexslider.js"></script>
+        <!--<script type="text/javascript" src="js/zepto.js"></script>-->
+        <!--<script type="text/javascript" src="js/touch.js"></script>-->
+        <!--<script type="text/javascript" src="js/matchMedia.js"></script>-->
+        <!--<script type="text/javascript" src="js/event.ortchange.js"></script>-->
+        <!--<script type="text/javascript" src="js/parseTpl.js"></script>-->
+        <!--<script type="text/javascript" src="js/gmu.js"></script>-->
+        <!--<script type="text/javascript" src="js/event.js"></script>-->
+        <!--<script type="text/javascript" src="js/widget.js"></script>-->
+        <!--<script type="text/javascript" src="js/slider.js"></script>-->
+        <!--<script type="text/javascript" src="js/arrow.js"></script>-->
+        <!--<script type="text/javascript" src="js/dots.js"></script>-->
+        <!--<script type="text/javascript" src="js/$touch.js"></script>-->
+        <!--<script type="text/javascript" src="js/$autoplay.js"></script>-->
+        <!--<script type="text/javascript" src="js/$lazyloadimg.js"></script>-->
+        <!--<script type="text/javascript" src="js/imgzoom.js"></script>-->
         <script>
-            function testAnim(x) {
-                $('#dd').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                    $(this).removeClass();
-                });
-            }
-            $(document).ready(function() {
+            $(function() {
                 $('#fullpage').fullpage({
                     'navigation': true,
                     'navigationPosition': 'bottom'
                 });
+                $('#card').removeClass().addClass('rubberBand animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                    $(this).removeClass();
+                });
+                var enroll_hei = 100 / 640 * document.body.clientWidth;
+                $('#enroll-btn').height(enroll_hei);
 
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    controlNav:false
+                });
+
+                //显示当前城市的内容
+                var ini_index = $('#nav li.current').index('#nav li');
+                $(".flexslider").eq(ini_index).show();
+
+                $('#nav li').each(function (i) {
+                    $(this).click(function () {
+                        $("#nav li").removeClass().eq(i).addClass('current');
+                        $(".flexslider").hide().eq(i).fadeOut(1300).fadeIn(800);
+                    });
+                });
             });
         </script>
     </head>
@@ -32,9 +64,153 @@
 
             <div id="fullpage">
                 <div class="section" id="page1">
-
+                    <img id="card" src="images/card.png" />
                 </div>
                 <div class="section" id="page2">
+                    <div id="nav">
+                        <ul>
+                            <li>
+                                <i class="sticon"></i>
+                                <p class="place">苏州</p>
+                                <p class="date">7月12日</p>
+                            </li>
+                            <li>
+                                <i class="sticon"></i>
+                                <p class="place">天津</p>
+                                <p class="date">7月26日</p>
+                            </li>
+                            <li class="current">
+                                <i class="sticon"></i>
+                                <p class="place">上海</p>
+                                <p class="date">7月5日</p>
+                            </li>
+                            <li>
+                                <i class="sticon"></i>
+                                <p class="place">北京</p>
+                                <p class="date">8月2日</p>
+                            </li>
+                            <li>
+                                <i class="sticon"></i>
+                                <p class="place">石家庄</p>
+                                <p class="date">8月9日</p>
+                            </li>
+                            <!--<li>-->
+                                <!--<i class="sticon"></i>-->
+                                <!--<p class="place">上海</p>-->
+                                <!--<p class="date">11月1日</p>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<i class="sticon"></i>-->
+                                <!--<p class="place">上海</p>-->
+                                <!--<p class="date">11月1日</p>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<i class="sticon"></i>-->
+                                <!--<p class="place">上海</p>-->
+                                <!--<p class="date">11月1日</p>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<i class="sticon"></i>-->
+                                <!--<p class="place">上海</p>-->
+                                <!--<p class="date">11月1日</p>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<i class="sticon"></i>-->
+                                <!--<p class="place">上海</p>-->
+                                <!--<p class="date">11月1日</p>-->
+                            <!--</li>-->
+                        </ul>
+                    </div>
+
+                    <!--苏州-->
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--天津-->
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--上海-->
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--北京-->
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--石家庄-->
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/car1.jpg" />
+                            </li>
+                        </ul>
+                    </div>
 
                 </div>
                 <div class="section" id="page3">
@@ -45,10 +221,16 @@
                 </div>
             </div>
 
-            <div class="footer">
-                <img id="footer-menu" src="images/bottom_menu.png" />
-                <a id="enroll-menu" href="javascript:;"></a>
+            <a id="enroll-btn" href="javascript:;"></a>
+
+            <div id="enroll-form">
+
             </div>
+
+            <!--<div class="footer">-->
+                <!--<img id="footer-menu" src="images/bottom_menu.png" />-->
+                <!--<a id="enroll-menu" href="javascript:;"></a>-->
+            <!--</div>-->
         </div>
         <div class="brand-page">
 

@@ -1,8 +1,124 @@
+body,div,span,img,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,input,textarea,select,option,fieldset,legend,p,th,td{margin:0; padding:0;}
+fieldset,img {border: 0;}
+a{text-decoration:none; color:#252525;}
+.clear{clear:both;}
+ul,li{list-style:none;}
+body{ font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color:#252525; font-size:14px; line-height:20px;-webkit-user-select: none;
+}
 .header{ position: fixed; top:0; width:100%;}
-.footer{ position: fixed; bottom:0; width: 100%;}
-#footer-menu{ width: 100%;}
-.section{background-size: cover;}
-#page1{background-image: url("../images/page1_bg.jpg");}
-#page2{background-image: url("../images/page2_bg.jpg");}
-#page3{background-image: url("../images/page3_bg.jpg");}
-#page4{background-image: url("../images/page4_bg.jpg");}
+.section{background-size: 100% 100%; width:100%;}
+#page1{background-image: url("../images/page1_bg.jpg"); position: relative;}
+#page2{background-image: url("../images/page2_bg.jpg"); position: relative;}
+#page3{background-image: url("../images/page3_bg.jpg"); position: relative;}
+#page4{background-image: url("../images/page4_bg.jpg"); position: relative;}
+#card{ position: absolute; right: 2%; width:43%; height: auto; bottom:100px;}
+#enroll-btn{ position: fixed; bottom: 0; left: 37%; width: 26%; cursor: pointer;}
+#nav{ background: url("../images/city_list_bg.png") 0 12px repeat-x; width: 100%; overflow: hidden;}
+#nav li
+{
+    display: inline-block;
+    cursor: pointer;
+    height: 90px;
+    text-align: center;
+    width: 20%;
+    float: left;
+}
+.ui-navigator-list,
+.ui-navigator-list li {
+    list-style: none;
+}
+.ui-navigator-list li {
+    display: inline-block;
+    white-space:nowrap;
+}
+#nav li.current{ color: red;}
+#nav li.current i{background-position: 0 -52px;}
+#nav li i {
+    background: url("../images/station_icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 32px;
+    margin: 0 auto 7px;
+    width: 32px;
+}
+.city
+@-webkit-keyframes rubberBand {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    30% {
+        -webkit-transform: scaleX(1.25) scaleY(0.75);
+        transform: scaleX(1.25) scaleY(0.75);
+    }
+
+    40% {
+        -webkit-transform: scaleX(0.75) scaleY(1.25);
+        transform: scaleX(0.75) scaleY(1.25);
+    }
+
+    60% {
+        -webkit-transform: scaleX(1.15) scaleY(0.85);
+        transform: scaleX(1.15) scaleY(0.85);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes rubberBand {
+    0% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+    30% {
+        -webkit-transform: scaleX(1.25) scaleY(0.75);
+        -ms-transform: scaleX(1.25) scaleY(0.75);
+        transform: scaleX(1.25) scaleY(0.75);
+    }
+
+    40% {
+        -webkit-transform: scaleX(0.75) scaleY(1.25);
+        -ms-transform: scaleX(0.75) scaleY(1.25);
+        transform: scaleX(0.75) scaleY(1.25);
+    }
+
+    60% {
+        -webkit-transform: scaleX(1.15) scaleY(0.85);
+        -ms-transform: scaleX(1.15) scaleY(0.85);
+        transform: scaleX(1.15) scaleY(0.85);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.rubberBand {
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}

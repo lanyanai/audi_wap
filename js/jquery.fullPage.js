@@ -168,7 +168,8 @@
 		if (options.navigation) {
 			$('body').append('<div id="fullPage-nav"><ul></ul></div>');
 			var nav = $('#fullPage-nav');
-
+            var nav_hei = 100/640 * document.body.clientWidth;
+            nav.height(nav_hei);
 			nav.css('color', options.navigationColor);
 			nav.addClass(options.navigationPosition);
 		}
@@ -177,7 +178,6 @@
 			var that = $(this);
 			var slides = $(this).find('.slide');
 			var numSlides = slides.length;
-
 			//if no active section is defined, the 1st one will be the default one
 			if(!index && $('.section.active').length === 0) {
 				$(this).addClass('active');
@@ -276,7 +276,7 @@
 
 			//vertical centered of the navigation + first bullet active
 			if(options.navigation){
-				nav.css('margin-top', '-' + (nav.height()/2) + 'px');
+				//nav.css('margin-top', '-' + (nav.height()/2) + 'px');
 				nav.find('li').eq($('.section.active').index('.section')).find('a').addClass('active');
 			}
 
